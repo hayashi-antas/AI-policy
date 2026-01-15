@@ -4,5 +4,6 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  site: 'https://example.com', // To be updated
+  site: 'https://hayashi-antas.github.io',
+  base: '/AI-policy',
 });
