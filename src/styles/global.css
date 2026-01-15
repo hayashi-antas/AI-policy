@@ -7,6 +7,7 @@
 @import "open-props/normalize";
 
 :root {
+    color-scheme: light;
     /* Marble Temple Palette */
     --marble-bg: #fdfdfc;
     --marble-surface: #f4f4f0;

@@ -1,16 +1,17 @@
 ---
 import CathedralLayout from '../layouts/CathedralLayout.astro';
-import Atmosphere from '../components/Atmosphere';
 import DropCap from '../components/DropCap.astro';
+import SynergyBadge from '../components/SynergyBadge';
+
 import SynergyBadge from '../components/SynergyBadge';
 import RevealSection from '../components/RevealSection';
 ---
 
 <CathedralLayout title="Internal AI Policy - The Codex">
-	<Atmosphere client:only="react" />
 	<SynergyBadge client:load />
 	
 	<article class="codex">
+
 		<RevealSection client:visible>
 			<header class="section-intro">
 				<div class="seal">
@@ -273,9 +274,10 @@ import RevealSection from '../components/RevealSection';
 	}
 
 	th {
+		background-color: rgba(0,0,0,0.03); /* Subtle offset */
 		font-family: var(--font-serif);
-		color: var(--stone-text);
-		font-weight: 400;
+		color: var(--obsidian-text);
+		font-weight: 600;
 	}
 
 	.doc-footer {
