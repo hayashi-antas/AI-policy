@@ -1,0 +1,107 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap');
+
+/* Open Props */
+@import "open-props/style";
+@import "open-props/normalize";
+
+:root {
+    /* Marble Temple Palette */
+    --marble-bg: #fdfdfc;
+    --marble-surface: #f4f4f0;
+    --obsidian-text: #111111;
+    --stone-text: #555555;
+    --divine-gold: #c5a059;
+    --faint-line: rgba(17, 17, 17, 0.08);
+
+    /* Typography */
+    --font-serif: 'Instrument Serif', serif;
+    --font-sans: 'Geist', sans-serif;
+    --font-mono: 'Geist Mono', monospace;
+}
+
+html {
+    background-color: var(--marble-bg);
+    color: var(--obsidian-text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+}
+
+::selection {
+    background: var(--divine-gold);
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    /* Serif looks best regular/italic */
+    margin-top: 0;
+}
+
+/* Synergy Badge Styles */
+.synergy-badge {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--faint-line);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--obsidian-text);
+    z-index: 100;
+    cursor: default;
+    min-width: 200px;
+}
+
+.synergy-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.synergy-meter {
+    display: flex;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+}
+
+.bar.human {
+    background: var(--obsidian-text);
+}
+
+.bar.ai {
+    background: var(--divine-gold);
+}
+
+.details {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--stone-text);
+    overflow: hidden;
+}

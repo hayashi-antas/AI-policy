@@ -1,0 +1,47 @@
+---
+interface Props {
+  letter: string;
+}
+
+const { letter } = Astro.props;
+---
+
+<span class="drop-cap-container">
+  <span class="sr-only">{letter}</span>
+  <svg class="drop-cap-svg" viewBox="0 0 100 100" aria-hidden="true">
+    <!-- Geometric Background -->
+    <rect x="10" y="10" width="80" height="80" fill="none" stroke="var(--divine-gold)" stroke-width="0.5" opacity="0.3" />
+    <circle cx="50" cy="50" r="35" fill="none" stroke="var(--divine-gold)" stroke-width="0.5" opacity="0.3" />
+    <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="none" stroke="var(--divine-gold)" stroke-width="0.5" opacity="0.5" />
+    
+    <!-- Letter -->
+    <text 
+      x="50" 
+      y="68" 
+      text-anchor="middle" 
+      font-family="var(--font-serif)" 
+      font-size="60" 
+      fill="var(--obsidian-text)"
+    >
+      {letter}
+    </text>
+  </svg>
+</span>
+
+<style>
+  .drop-cap-container {
+    float: left;
+    margin-right: 1rem;
+    margin-top: -0.2rem;
+    margin-bottom: -0.5rem;
+    width: 5rem;
+    height: 5rem;
+    shape-outside: margin-box;
+  }
+  
+  .drop-cap-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+</style>
