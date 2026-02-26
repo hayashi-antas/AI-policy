@@ -29,6 +29,8 @@ import RevealSection from '../components/RevealSection';
 
 		<hr class="divider" />
 
+		<div class="prose-container">
+
 		<RevealSection client:visible delay={0.2}>
 			<section id="section-1">
 			<h2><span class="chapter-num">I.</span> 目的とエンジニアリング基本原則</h2>
@@ -154,6 +156,8 @@ import RevealSection from '../components/RevealSection';
 			</div>
 			<p class="copyright">© 2026 AI Policy / Digital Cathedral Project</p>
 		</footer>
+
+		</div><!-- prose-container -->
 	</article>
 </CathedralLayout>
 
@@ -286,7 +290,6 @@ import RevealSection from '../components/RevealSection';
 		font-family: var(--font-sans);
 		color: #000000;
 		font-weight: 700;
-        min-width: 180px;
 	}
 
 	.doc-footer {
@@ -299,5 +302,11 @@ import RevealSection from '../components/RevealSection';
 	.references ul {
 		list-style: none;
 		padding: 0;
+	}
+
+	.prose-container {
+		width: 100%;
+		max-width: 860px;
+		margin: 0 auto;
 	}
 </style>
