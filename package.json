@@ -12,6 +12,7 @@
     "@astrojs/react": "^4.4.2",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
+    "@tailwindcss/vite": "^4.2.1",
     "@types/three": "^0.182.0",
     "astro": "^5.16.9",
     "framer-motion": "^12.26.2",
@@ -19,6 +20,7 @@
     "open-props": "^1.7.17",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "tailwindcss": "^4.2.1",
     "three": "^0.182.0"
   }
 }
