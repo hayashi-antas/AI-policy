@@ -23,6 +23,42 @@ const { title } = Astro.props;
 			<slot />
 		</main>
 
+		<nav class="home-nav">
+			<a href="/AI-policy/" aria-label="ホームへ戻る">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+					<polyline points="9 21 9 12 15 12 15 21"/>
+				</svg>
+			</a>
+		</nav>
+
+		<style>
+			.home-nav {
+				position: fixed;
+				bottom: 2rem;
+				left: 2rem;
+				z-index: 100;
+			}
+			.home-nav a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 44px;
+				height: 44px;
+				background: rgba(255, 255, 255, 0.85);
+				backdrop-filter: blur(10px);
+				border: 1px solid var(--faint-line);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+				color: var(--stone-text);
+				text-decoration: none;
+				transition: color 0.2s, border-color 0.2s;
+			}
+			.home-nav a:hover {
+				color: var(--divine-gold);
+				border-color: var(--divine-gold);
+			}
+		</style>
+
 		<script>
       // Initialize Lenis for smooth scrolling
       import Lenis from 'lenis';

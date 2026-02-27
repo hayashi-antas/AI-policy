@@ -1,303 +1,169 @@
 ---
 import CathedralLayout from '../layouts/CathedralLayout.astro';
-import DropCap from '../components/DropCap.astro';
-import SynergyBadge from '../components/SynergyBadge';
-
-
-import RevealSection from '../components/RevealSection';
 ---
 
-<CathedralLayout title="Internal AI Policy - The Codex">
-	<SynergyBadge client:load />
-	
-	<article class="codex">
+<CathedralLayout title="AI Policy - ホーム">
+<div class="home">
+<header class="home-header">
+<div class="seal">
+<svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="var(--divine-gold)">
+<circle cx="50" cy="50" r="45" stroke-width="2" />
+<rect x="35" y="35" width="30" height="30" stroke-width="1" transform="rotate(45 50 50)" />
+</svg>
+</div>
+<p class="preamble">社内向けAIポリシー</p>
+<h1>AI Policy</h1>
+<p class="subtitle">エンジニアリング・開発業務における AI 活用の指針</p>
+</header>
 
-		<RevealSection client:visible>
-			<header class="section-intro">
-				<div class="seal">
-					<!-- Placeholder for Seal SVG -->
-					<svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="var(--divine-gold)">
-						<circle cx="50" cy="50" r="45" stroke-width="2" />
-						<rect x="35" y="35" width="30" height="30" stroke-width="1" transform="rotate(45 50 50)" />
-					</svg>
-				</div>
-				<p class="preamble">社内向けAIポリシー</p>
-				<h1>エンジニアリング・開発業務における<br/>AI活用原則と遵守事項</h1>
-				<p class="date">制定日： 2025年12月12日</p>
-			</header>
-		</RevealSection>
+<nav class="page-list">
+<a href="/AI-policy/policy" class="page-card">
+<div class="card-icon">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+<polyline points="14 2 14 8 20 8"/>
+<line x1="16" y1="13" x2="8" y2="13"/>
+<line x1="16" y1="17" x2="8" y2="17"/>
+<polyline points="10 9 9 9 8 9"/>
+</svg>
+</div>
+<div class="card-body">
+<h2>AI活用原則と遵守事項</h2>
+<p>エンジニアリング・開発業務における AI 活用の基本原則、絶対遵守事項、利用ガイドラインを定めた中心的なポリシー文書。</p>
+</div>
+<span class="card-arrow">→</span>
+</a>
 
-		<hr class="divider" />
-
-		<RevealSection client:visible delay={0.2}>
-			<section id="section-1">
-			<h2><span class="chapter-num">I.</span> 目的とエンジニアリング基本原則</h2>
-			<p>
-				<DropCap letter="本" />ポリシーは、エンジニアリングおよびクリエイティブ業務において AI 技術（LLM、コード生成AI、自律型エージェント等）を「開発と創造のアクセラレーター」として最大限活⽤するための指針です。
-			</p>
-			<p>
-				私たちは、<strong>High Quality Code</strong>（品質の追求）、<strong>Security First</strong>（セキュリティ第一）、<strong>Legal Compliance</strong>（法令遵守）を原則とし、AIを活用してクライアントに最⾼品質のソリューションを提供します。
-			</p>
-		</section>
-
-			</section>
-		</RevealSection>
-
-		<RevealSection client:visible>
-			<section id="section-2">
-			<h2><span class="chapter-num">II.</span> 絶対遵守事項</h2>
-			<p>
-				エンジニアとして、以下の行為は「セキュリティ事故」および「重大な権利侵害」につながるため、厳格に禁止します。
-			</p>
-			
-			<h3>1. 入力データのセキュリティ (Secrets & Confidentiality)</h3>
-			<ul>
-				<li>
-					<strong>クレデンシャルの入力禁止:</strong> APIキー、アクセストークン、パスワード、接続文字列などの機密情報を、いかなる外部AIサービスにも入力してはなりません。GitHub Copilot等のクラウド送信されるツールも同様です。
-				</li>
-				<li>
-					<strong>ファイル読み取り型エージェントの管理:</strong> AIエージェント使用時は、<code>.env</code> ファイルや認証情報が誤って読み込まれ外部送信されないよう、除外設定（ignore）を徹底管理してください。
-				</li>
-				<li>
-					<strong>顧客データの保護:</strong> 個人情報・顧客DB・未公開仕様書など、クライアントから預託されたデータを、モデル改善用途に再利用される外部AIに入力することを禁止します。
-				</li>
-			</ul>
-
-			<h3>2. 知財コンプライアンス</h3>
-			<ul>
-				<li>
-					<strong>意図的な模倣（依拠性）の禁止:</strong> 特定のサービスや著名なコードベースを再現させる目的でプロンプト入力する行為を禁止します。
-				</li>
-				<li>
-					<strong>生成物の類似性チェック:</strong> 画像・デザイン・文章を作成する際は、既存著作物に酷似していないか画像検索等で必ず確認してください。
-				</li>
-			</ul>
-		</section>
-
-			</section>
-		</RevealSection>
-
-		<RevealSection client:visible>
-			<section id="section-3">
-			<h2><span class="chapter-num">III.</span> 利用ガイドライン</h2>
-			
-			<div class="grid-layout">
-				<div class="guideline-block">
-					<h3>1. コーディング</h3>
-					<p>AIエージェントの積極活用: リファクタリングやテスト生成等のタスクにはAIエージェントを推奨します。</p>
-					<p><strong>最終承認 (Human-In-The-Loop):</strong> AIが書き、AIがレビューしたコードであっても、マージ権限と最終責任は人間が持ちます。</p>
-				</div>
-
-				<div class="guideline-block">
-					<h3>2. RAG・LLM システム提案</h3>
-					<p>信頼性設計: ハルシネーションを防ぐため、参照元の明示や回答根拠の提示といった信頼性向上機構を設計に含めてください。</p>
-				</div>
-
-				<div class="guideline-block">
-					<h3>3. Web制作・デザイン</h3>
-					<p>類似性と権利リスク: 生成された画像やロゴが既存の商標や著作物に似ていないか確認してください。</p>
-				</div>
-			</div>
-		</section>
-
-			</section>
-		</RevealSection>
-
-		<RevealSection client:visible>
-			<section id="section-4">
-			<h2><span class="chapter-num">IV.</span> 推奨される活用シーン</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>カテゴリ</th>
-						<th>推奨ユースケース</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>実装・コーディング</td>
-						<td>ボイラープレート生成、ユニットテスト自動化、正規表現作成、ログ解析</td>
-					</tr>
-					<tr>
-						<td>Web開発・制作</td>
-						<td>プロトタイピング、UIラフ生成、CSS調整、文案生成</td>
-					</tr>
-					<tr>
-						<td>研究・調査</td>
-						<td>新技術調査、論文要約、壁打ち、要件定義支援</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-
-			</section>
-		</RevealSection>
-
-		<RevealSection client:visible>
-			<section id="section-5">
-			<h2><span class="chapter-num">V.</span> アカウンタビリティ</h2>
-			<p>
-				最終責任はエンジニアにあり: AIが生成したコードや文章を採用した時点で、その責任はAIではなく「コミットしたエンジニアとレビュー担当者」に帰属します。
-			</p>
-			</section>
-		</RevealSection>
-
-		<footer class="doc-footer">
-			<hr class="divider" />
-			<div class="references">
-				<h3>参考文献・準拠ガイドライン</h3>
-				<ul>
-					<li>経済産業省『コンテンツ制作のための生成AI利活用ガイドブック』（2024）</li>
-					<li>文化庁『AIと著作権に関する考え方』（2024）</li>
-					<li>EU AI Act</li>
-				</ul>
-			</div>
-			<p class="copyright">© 2026 AI Policy / Digital Cathedral Project</p>
-		</footer>
-	</article>
+<a href="/AI-policy/input-guidelines" class="page-card">
+<div class="card-icon">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="10"/>
+<line x1="12" y1="8" x2="12" y2="12"/>
+<line x1="12" y1="16" x2="12.01" y2="16"/>
+</svg>
+</div>
+<div class="card-body">
+<h2>入力してはいけない情報リスト</h2>
+<p>生成AIに入力禁止の情報（個人情報・機密情報・認証情報など）と、安全に入力できる情報の基準をまとめた実務向け指針。</p>
+</div>
+<span class="card-arrow">→</span>
+</a>
+</nav>
+</div>
 </CathedralLayout>
 
 <style>
-	.codex {
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		padding: 6rem 2rem;
-		position: relative;
-		z-index: 1;
-	}
+.home {
+min-height: 100vh;
+max-width: 850px;
+margin: 0 auto;
+padding: 6rem 2.5rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
-	.section-intro {
-		text-align: center;
-		margin-bottom: 6rem;
-		padding-top: 4rem;
-	}
+.home-header {
+text-align: center;
+margin-bottom: 5rem;
+}
 
-	.seal {
-		margin-bottom: 2rem;
-		opacity: 0.8;
-	}
+.seal {
+margin-bottom: 2rem;
+opacity: 0.8;
+display: flex;
+justify-content: center;
+}
 
-	.preamble {
-		text-transform: uppercase;
-		font-size: 0.85rem;
-		letter-spacing: 0.2rem;
-		color: var(--stone-text);
-		margin-bottom: 1rem;
-	}
+.preamble {
+text-transform: uppercase;
+font-size: 0.85rem;
+letter-spacing: 0.2rem;
+color: var(--stone-text);
+margin-bottom: 1rem;
+}
 
-	h1 {
-		font-size: clamp(2.5rem, 5vw, 4rem);
-		line-height: 1.1;
-		margin-bottom: 2rem;
-		font-weight: 400;
-	}
+h1 {
+font-family: var(--font-serif);
+font-size: clamp(2.5rem, 6vw, 4.5rem);
+font-weight: 400;
+line-height: 1.15;
+margin-bottom: 1.2rem;
+color: var(--obsidian-text);
+}
 
-	.date {
-		font-family: var(--font-mono);
-		font-size: 0.9rem;
-		color: var(--stone-text);
-	}
+.subtitle {
+font-size: 1rem;
+color: var(--stone-text);
+line-height: 1.8;
+}
 
-	.divider {
-		border: 0;
-		height: 1px;
-		background: linear-gradient(90deg, transparent, var(--faint-line), transparent);
-		margin: 4rem 0;
-	}
+.page-list {
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
 
-	section {
-		margin-bottom: 6rem;
-	}
+.page-card {
+display: flex;
+align-items: center;
+gap: 1.5rem;
+padding: 2rem;
+border: 1px solid var(--faint-line);
+text-decoration: none;
+color: inherit;
+transition: border-color 0.2s, box-shadow 0.2s;
+background: var(--marble-surface);
+}
 
-	h2 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 1px solid var(--faint-line);
-		padding-bottom: 1rem;
-		display: flex;
-		align-items: baseline;
-		gap: 1rem;
-	}
+.page-card:hover {
+border-color: var(--divine-gold);
+box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
 
-	.chapter-num {
-		font-size: 1.2rem;
-		color: var(--divine-gold);
-		font-family: var(--font-mono);
-	}
+.card-icon {
+flex-shrink: 0;
+color: var(--divine-gold);
+opacity: 0.9;
+}
 
-	h3 {
-		font-size: 1.25rem;
-		margin-top: 2.5rem;
-		margin-bottom: 1rem;
-		color: var(--obsidian-text);
-	}
+.card-body {
+flex: 1;
+}
 
-	p, li {
-		font-size: 1.05rem;
-		line-height: 1.8;
-		color: #333;
-		margin-bottom: 1rem;
-	}
+.card-body h2 {
+font-family: var(--font-serif);
+font-size: 1.3rem;
+font-weight: 400;
+margin-bottom: 0.5rem;
+color: var(--obsidian-text);
+}
 
-	strong {
-		font-weight: 600;
-		color: var(--obsidian-text);
-	}
+.card-body p {
+font-size: 0.95rem;
+color: var(--stone-text);
+line-height: 1.7;
+margin: 0;
+}
 
-	code {
-		font-family: var(--font-mono);
-		background: rgba(0,0,0,0.05);
-		padding: 0.2em 0.4em;
-		border-radius: 4px;
-		font-size: 0.9em;
-	}
+.card-arrow {
+font-size: 1.2rem;
+color: var(--divine-gold);
+flex-shrink: 0;
+transition: transform 0.2s;
+}
 
-	ul {
-		padding-left: 1.5rem;
-	}
+.page-card:hover .card-arrow {
+transform: translateX(4px);
+}
 
-	li {
-		margin-bottom: 0.5rem;
-	}
-
-	table, tbody, tr, td, th {
-		background-color: #ffffff !important;
-		color: #1a1a1a !important;
-	}
-
-	table {
-		width: 100%;
-		border-collapse: collapse;
-		margin-top: 2rem;
-		font-size: 1rem;
-        border: 1px solid #e5e5e5;
-	}
-
-	th, td {
-		padding: 1.2rem 1rem;
-		text-align: left;
-		border-bottom: 1px solid #e5e5e5;
-        color: #1a1a1a;
-	}
-
-	th {
-		background-color: #f8f9fa;
-		font-family: var(--font-sans);
-		color: #000000;
-		font-weight: 700;
-        min-width: 180px;
-	}
-
-	.doc-footer {
-		text-align: center;
-		color: var(--stone-text);
-		font-size: 0.9rem;
-		padding-bottom: 4rem;
-	}
-	
-	.references ul {
-		list-style: none;
-		padding: 0;
-	}
+@media (max-width: 600px) {
+.home {
+padding: 4rem 1.5rem;
+}
+.page-card {
+flex-wrap: wrap;
+}
+}
 </style>
