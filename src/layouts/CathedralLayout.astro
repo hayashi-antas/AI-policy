@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import DigitalWaveBackground from '../components/DigitalWaveBackground';
 
 interface Props {
 	title: string;
@@ -19,6 +20,8 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<DigitalWaveBackground client:load preset="abyssCyan" veilOpacity={0.38} />
+
 		<main>
 			<slot />
 		</main>
@@ -33,6 +36,11 @@ const { title } = Astro.props;
 		</nav>
 
 		<style>
+			main {
+				position: relative;
+				z-index: 2;
+			}
+
 			.home-nav {
 				position: fixed;
 				bottom: 2rem;
@@ -45,12 +53,13 @@ const { title } = Astro.props;
 				justify-content: center;
 				width: 44px;
 				height: 44px;
-				background: rgba(255, 255, 255, 0.85);
+				background: rgba(255, 255, 255, 0.62);
 				backdrop-filter: blur(10px);
-				border: 1px solid var(--faint-line);
-				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+				border: 1px solid rgba(255, 255, 255, 0.84);
+				box-shadow: 0 8px 20px rgba(8, 22, 40, 0.12);
 				color: var(--stone-text);
 				text-decoration: none;
+				border-radius: 999px;
 				transition: color 0.2s, border-color 0.2s;
 			}
 			.home-nav a:hover {
