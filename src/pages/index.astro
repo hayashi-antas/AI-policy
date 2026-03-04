@@ -48,6 +48,22 @@ import CathedralLayout from '../layouts/CathedralLayout.astro';
 </div>
 <span class="card-arrow">→</span>
 </a>
+
+<a href="/AI-policy/training-achievements" class="page-card">
+<div class="card-icon">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M3 18h18"/>
+<path d="M7 18V8"/>
+<path d="M12 18V5"/>
+<path d="M17 18v-6"/>
+</svg>
+</div>
+<div class="card-body">
+<h2>3ヶ月研修成果物一覧</h2>
+<p>PoC・Webアプリ・CI/CD自動化・ガバナンス資料まで、研修期間中に作成した成果物をカテゴリ別にまとめた一覧ページ。</p>
+</div>
+<span class="card-arrow">→</span>
+</a>
 </nav>
 </div>
 </CathedralLayout>
@@ -66,6 +82,13 @@ align-items: center;
 .home-header {
 text-align: center;
 margin-bottom: 5rem;
+padding: 2.4rem 2rem;
+background: rgba(255, 255, 255, 0.72);
+border: 1px solid rgba(255, 255, 255, 0.82);
+box-shadow: 0 16px 42px rgba(9, 25, 46, 0.12);
+backdrop-filter: blur(10px);
+border-radius: 20px;
+width: 100%;
 }
 
 .seal {
@@ -110,11 +133,14 @@ display: flex;
 align-items: center;
 gap: 1.5rem;
 padding: 2rem;
-border: 1px solid var(--faint-line);
+border: 1px solid rgba(255, 255, 255, 0.84);
 text-decoration: none;
 color: inherit;
 transition: border-color 0.2s, box-shadow 0.2s;
-background: var(--marble-surface);
+background: rgba(255, 255, 255, 0.72);
+backdrop-filter: blur(9px);
+border-radius: 18px;
+box-shadow: 0 10px 30px rgba(9, 25, 46, 0.1);
 }
 
 .page-card:hover {
@@ -161,6 +187,9 @@ transform: translateX(4px);
 @media (max-width: 600px) {
 .home {
 padding: 4rem 1.5rem;
+}
+.home-header {
+padding: 1.9rem 1.3rem;
 }
 .page-card {
 flex-wrap: wrap;
