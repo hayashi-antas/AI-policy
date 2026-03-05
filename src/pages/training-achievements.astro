@@ -1,5 +1,7 @@
 ---
 import CathedralLayout from '../layouts/CathedralLayout.astro';
+const basePath = import.meta.env.BASE_URL;
+const assetBase = basePath.endsWith('/') ? basePath : `${basePath}/`;
 ---
 
 <CathedralLayout title="3ヶ月研修成果物一覧">
@@ -12,7 +14,7 @@ import CathedralLayout from '../layouts/CathedralLayout.astro';
 				</svg>
 			</div>
 			<p class="preamble">3ヶ月研修成果発表</p>
-			<h1>成果物一覧</h1>
+			<h1>主な成果物一覧</h1>
 			<p class="subtitle">PoC・Webアプリ・自動化・ガバナンスの4領域で作成した成果物</p>
 		</header>
 
@@ -20,52 +22,53 @@ import CathedralLayout from '../layouts/CathedralLayout.astro';
 
 		<section class="category-grid">
 			<section class="category">
-						<h2><span class="num">1.</span> 高度なAI機能・PoCアプリ（RAG・画像解析・API連携）</h2>
+						<h2><span class="num">1.</span> 高度なAI機能・PoCアプリ</h2>
 						<p class="lead">実務でのAI活用を見据え、お客様への提案（PoC）に直結するプロトタイプ群です。</p>
 						<ul>
 								<li>
 									<div class="item-row">
-										<a class="item-link" href="https://peeaaa-ant-plan2table.hf.space/area" target="_blank" rel="noopener noreferrer">PDF図面から面積・部屋情報抽出するアプリ（AI agent構成）</a>
+										<a class="item-link" href="https://peeaaa-ant-plan2table.hf.space/area" target="_blank" rel="noopener noreferrer">PDF図面から面積・部屋情報抽出するアプリ（AI agent）</a>
 										<a class="github-link" href="https://github.com/hayashi-antas/plan2table" target="_blank" rel="noopener noreferrer" aria-label="PDF図面抽出アプリのGitHub">
 											<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
 										</a>
-										<a class="hf-link" href="https://huggingface.co/spaces/Peeaaa-ant/plan2table/tree/main" target="_blank" aria-label="PDF図面抽出アプリのHugging Faceリンク" title="Hugging Faceリンク">🤗</a>
+										<a class="hf-link" href="https://huggingface.co/spaces/Peeaaa-ant/plan2table/tree/main" target="_blank" rel="noopener noreferrer" aria-label="PDF図面抽出アプリのHugging Faceリンク" title="Hugging Faceリンク">
+											<img class="service-icon" src={`${assetBase}brand-icons/huggingface.png`} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+										</a>
 									</div>
 								</li>
 								<li>
 									<div class="item-row">
-										<a class="item-link" href="https://peeaaa-ant-plan2table.hf.space/me-check" target="_blank" rel="noopener noreferrer">機器表と電力制御盤表の突合アプリ（Cloud Vision API）</a>
+										<a class="item-link" href="https://peeaaa-ant-plan2table.hf.space/me-check" target="_blank" rel="noopener noreferrer">機械図と電気図の突合アプリ（Cloud Vision API）</a>
 										<a class="github-link" href="https://github.com/hayashi-antas/plan2table" target="_blank" rel="noopener noreferrer" aria-label="機器表突合アプリのGitHub">
 											<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
 										</a>
-										<a class="hf-link" href="https://huggingface.co/spaces/Peeaaa-ant/plan2table/tree/main" target="_blank" aria-label="機器表突合アプリのHugging Faceリンク" title="Hugging Faceリンク">🤗</a>
+										<a class="hf-link" href="https://huggingface.co/spaces/Peeaaa-ant/plan2table/tree/main" target="_blank" rel="noopener noreferrer" aria-label="機器表突合アプリのHugging Faceリンク" title="Hugging Faceリンク">
+											<img class="service-icon" src={`${assetBase}brand-icons/huggingface.png`} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+										</a>
 									</div>
 								</li>
-							<li>
-								<div class="item-row">
-									<a class="item-link" href="https://peeaaa-ant-mini-rag.hf.space" target="_blank" rel="noopener noreferrer">ローカルで稼働するRAG構成のAIチャットボット（CLI）</a>
-									<a class="github-link" href="https://github.com/hayashi-antas/mini-rag" target="_blank" rel="noopener noreferrer" aria-label="RAG CLIのGitHub">
-										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</a>
-								</div>
-							</li>
 								<li>
 									<div class="item-row">
-										<a class="item-link" href="https://github.com/hayashi-antas/plan2table" target="_blank" rel="noopener noreferrer">RAG構成のAIチャットボット（GUI）</a>
-										<a class="github-link" href="https://github.com/hayashi-antas/plan2table" target="_blank" rel="noopener noreferrer" aria-label="RAG GUIのGitHub">
+										<a class="item-link" href="https://github.com/hayashi-antas/mini-rag" target="_blank" rel="noopener noreferrer">RAG構成のAIチャットボット（GUI）</a>
+										<a class="github-link" href="https://peeaaa-ant-mini-rag.hf.space/" target="_blank" rel="noopener noreferrer" aria-label="RAG GUIのGitHub">
 											<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
 										</a>
-										<a class="hf-link" href="https://huggingface.co/spaces/Peeaaa-ant/mini-rag" target="_blank" aria-label="RAG GUIのHugging Faceリンク" title="Hugging Faceリンク">🤗</a>
+										<a class="hf-link" href="https://huggingface.co/spaces/Peeaaa-ant/mini-rag" target="_blank" rel="noopener noreferrer" aria-label="RAG GUIのHugging Faceリンク" title="Hugging Faceリンク">
+											<img class="service-icon" src={`${assetBase}brand-icons/huggingface.png`} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+										</a>
 									</div>
 								</li>
-							<li>
-								<div class="item-row">
-									<a class="item-link" href="https://fact-checker-app-97yb4mvbjwm282tbsasxw8.streamlit.app/" target="_blank" rel="noopener noreferrer">Perplexity APIを用いたファクトチェックアプリ</a>
-									<a class="github-link" href="https://github.com/hayashi-antas/fact-checker-app" target="_blank" rel="noopener noreferrer" aria-label="ファクトチェックアプリのGitHub">
-										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</a>
-								</div>
-							</li>
+								<li>
+									<div class="item-row">
+										<a class="item-link" href="https://fact-checker-app-97yb4mvbjwm282tbsasxw8.streamlit.app/" target="_blank" rel="noopener noreferrer">Perplexity APIを用いたファクトチェックアプリ</a>
+										<a class="github-link" href="https://github.com/hayashi-antas/fact-checker-app" target="_blank" rel="noopener noreferrer" aria-label="ファクトチェックアプリのGitHub">
+											<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
+										</a>
+										<a class="streamlit-link" href="https://share.streamlit.io/" target="_blank" rel="noopener noreferrer" aria-label="ファクトチェックアプリのStreamlit">
+											<img class="service-icon" src={`${assetBase}brand-icons/streamlit.svg`} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+										</a>
+									</div>
+								</li>
 						</ul>
 					</section>
 
@@ -75,61 +78,41 @@ import CathedralLayout from '../layouts/CathedralLayout.astro';
 						<ul>
 							<li>
 								<div class="item-row">
-									<a class="item-link" href="https://kiro-rails-todo.onrender.com/" target="_blank" rel="noopener noreferrer">Kiroを使ったRailsによるToDoアプリ（パスキー認証）</a>
-									<a class="github-link" href="https://github.com/hayashi-antas/fact-checker-app" target="_blank" rel="noopener noreferrer" aria-label="ファクトチェックアプリのGitHub">
-										<svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</span>
-								</div>
-							</li>
-							<li>
-								<div class="item-row">
-									<a class="item-link" href="https://github.com/hayashi-antas/kiro-daily-report-generator" target="_blank" rel="noopener noreferrer">Kiroを使った日報生成サイト</a>
-									<a class="github-link" href="https://github.com/hayashi-antas/kiro-daily-report-generator" target="_blank" rel="noopener noreferrer" aria-label="Kiro日報生成サイトのGitHub">
-										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</a>
-								</div>
-							</li>
-							<li>
-								<div class="item-row">
-									<a class="item-link" href="https://github.com/hayashi-antas/gemini-daily-report-generator" target="_blank" rel="noopener noreferrer">Geminiを使った日報生成サイト</a>
-									<a class="github-link" href="https://github.com/hayashi-antas/gemini-daily-report-generator" target="_blank" rel="noopener noreferrer" aria-label="Gemini日報生成サイトのGitHub">
-										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
+									<a class="item-link" href="https://flutterflow-sns.flutterflow.app/" target="_blank" rel="noopener noreferrer">FlutterFlowを使った画像・動画を投稿できるSNSアプリ</a>
+									<a class="github-link" href="https://app.flutterflow.io/project/flutterflow-sns-25ov9x?tab=uiBuilder&page=login" target="_blank" rel="noopener noreferrer" aria-label="FlutterFlow SNSアプリのFlutterFlowプロジェクト">
+										<img class="service-icon" src={`${assetBase}brand-icons/flutterflow.png`} alt="" loading="lazy" decoding="async" aria-hidden="true" />
 									</a>
 								</div>
 							</li>
 							<li>
 								<div class="item-row">
 									<a class="item-link" href="https://antigravity-book-tracker.vercel.app/dashboard" target="_blank" rel="noopener noreferrer">Antigravityを使ったNext.jsによる読書管理アプリ</a>
-									<span class="github-link disabled" aria-hidden="true">
-										<svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</span>
+									<a class="github-link" href="https://github.com/hayashi-antas/antigravity-book-tracker" target="_blank" rel="noopener noreferrer" aria-label="Antigravityを使ったNext.jsによる読書管理アプリのGitHub">
+										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
+									</a>
 								</div>
 							</li>
 							<li>
 								<div class="item-row">
-									<a class="item-link" href="https://flutterflow-sns.flutterflow.app/" target="_blank" rel="noopener noreferrer">FlutterFlowを使った画像・動画を投稿できるSNSアプリ</a>
-									<a class="github-link" href="https://app.flutterflow.io/project/flutterflow-sns-25ov9x?tab=uiBuilder&page=login" target="_blank" rel="noopener noreferrer" aria-label="FlutterFlow SNSアプリのFlutterFlowプロジェクト">
-										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-											<rect x="0" y="0" width="16" height="16" rx="3" fill="#0f7f92" />
-											<path d="M4 3h8v2H6v2h5v2H6v4H4V3z" fill="#ffffff" />
-											<path d="M9 9l3 4h-2.3L7 9h2z" fill="#ffffff" />
-										</svg>
+									<a class="item-link" href="https://kiro-rails-todo.onrender.com/" target="_blank" rel="noopener noreferrer">Kiroを使ったRailsによるToDoアプリ（パスキー認証）</a>
+									<a class="github-link" href="https://github.com/hayashi-antas/kiro-rails-todo" target="_blank" rel="noopener noreferrer" aria-label="Kiroを使ったRailsによるToDoアプリ（パスキー認証）のGitHub">
+										<svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
 									</a>
 								</div>
 							</li>
 							<li>
 								<div class="item-row">
 									<a class="item-link" href="https://hayashi-antas.github.io/codex-sample/" target="_blank" rel="noopener noreferrer">Codexを使ったシンプルなToDoリスト</a>
-									<span class="github-link disabled" aria-hidden="true">
-										<svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</span>
+									<a class="github-link" href="https://github.com/hayashi-antas/codex-sample" target="_blank" rel="noopener noreferrer" aria-label="Codexを使ったシンプルなToDoリストのGitHub">
+										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
+									</a>
 								</div>
 							</li>
 						</ul>
 					</section>
 
 			<section class="category">
-						<h2><span class="num">3.</span> 開発プロセスの自動化・CI/CD構築（業務効率化）</h2>
+						<h2><span class="num">3.</span> 開発プロセスの自動化・CI/CD構築</h2>
 						<p class="lead">GitHub Actionsやスクリプトを活用し、日々の開発業務やレビューを自動化・効率化する仕組みです。</p>
 						<ul>
 							<li>
@@ -142,8 +125,8 @@ import CathedralLayout from '../layouts/CathedralLayout.astro';
 							</li>
 							<li>
 								<div class="item-row">
-									<a class="item-link" href="https://github.com/hayashi-antas/github-issues-sample/blob/main/docs/ai_input_cleansing.md" target="_blank" rel="noopener noreferrer">AIレビュー前の入力データクレンジング</a>
-									<a class="github-link" href="https://github.com/hayashi-antas/github-issues-sample/blob/main/docs/ai_input_cleansing.md" target="_blank" rel="noopener noreferrer" aria-label="入力データクレンジングのGitHub">
+									<a class="item-link" href="https://github.com/hayashi-antas/tool-selection-labo/blob/main/comparisons/github-actions-tools.md" target="_blank" rel="noopener noreferrer">CIで使うセキュリティ・品質ツールを役割ごとに並べた一覧</a>
+									<a class="github-link" href="https://github.com/hayashi-antas/tool-selection-labo/blob/main/comparisons/github-actions-tools.md" target="_blank" rel="noopener noreferrer" aria-label="CIツール一覧のGitHub">
 										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
 									</a>
 								</div>
@@ -168,45 +151,37 @@ import CathedralLayout from '../layouts/CathedralLayout.astro';
 					</section>
 
 			<section class="category">
-						<h2><span class="num">4.</span> ガバナンス・品質保証・技術ドキュメント（組織導入の基盤）</h2>
+						<h2><span class="num">4.</span> ガバナンス・品質保証・技術ドキュメント</h2>
 						<p class="lead">AIを安全に運用するためのルール策定や、セキュリティ・テスト技術の評価ドキュメントです。</p>
 						<ul>
 							<li>
 								<div class="item-row">
 									<a class="item-link" href="https://hayashi-antas.github.io/AI-policy/policy/" target="_blank" rel="noopener noreferrer">エンジニアリング・開発業務におけるAI活用原則と遵守事項</a>
-									<span class="github-link disabled" aria-hidden="true">
-										<svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</span>
-								</div>
-							</li>
-							<li>
-								<div class="item-row">
-									<a class="item-link" href="https://hayashi-antas.github.io/AI-policy/input-guidelines/" target="_blank" rel="noopener noreferrer">生成AIに入力してはいけない情報リスト</a>
-									<span class="github-link disabled" aria-hidden="true">
-										<svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</span>
-								</div>
-							</li>
-							<li>
-								<div class="item-row">
-									<a class="item-link" href="https://hayashi-antas.github.io/v-model/" target="_blank" rel="noopener noreferrer">V字モデルの構造と詳細</a>
-									<span class="github-link disabled" aria-hidden="true">
-										<svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
-									</span>
-								</div>
-							</li>
-							<li>
-								<div class="item-row">
-									<a class="item-link" href="https://github.com/hayashi-antas/tool-selection-labo/blob/main/comparisons/no-code-platforms.md" target="_blank" rel="noopener noreferrer">AI・ローコードツール比較表</a>
-									<a class="github-link" href="https://github.com/hayashi-antas/tool-selection-labo/blob/main/comparisons/no-code-platforms.md" target="_blank" rel="noopener noreferrer" aria-label="ローコード比較表のGitHub">
+									<a class="github-link" href="https://github.com/hayashi-antas/AI-policy" target="_blank" rel="noopener noreferrer" aria-label="エンジニアリング・開発業務におけるAI活用原則と遵守事項のGitHub">
 										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
 									</a>
 								</div>
 							</li>
 							<li>
 								<div class="item-row">
-									<a class="item-link" href="https://github.com/hayashi-antas/tool-selection-labo/blob/main/comparisons/github-actions-tools.md" target="_blank" rel="noopener noreferrer">CIで使うセキュリティ・品質ツールを役割ごとに並べた一覧</a>
-									<a class="github-link" href="https://github.com/hayashi-antas/tool-selection-labo/blob/main/comparisons/github-actions-tools.md" target="_blank" rel="noopener noreferrer" aria-label="CIツール一覧のGitHub">
+									<a class="item-link" href="https://hayashi-antas.github.io/AI-policy/input-guidelines/" target="_blank" rel="noopener noreferrer">生成AIに入力してはいけない情報リスト</a>
+									<a class="github-link" href="https://github.com/hayashi-antas/AI-policy" target="_blank" rel="noopener noreferrer" aria-label="生成AIに入力してはいけない情報リストのGitHub">
+										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="item-row">
+									<a class="item-link" href="https://hayashi-antas.github.io/v-model/" target="_blank" rel="noopener noreferrer">V字モデルの構造と詳細</a>
+									<a class="github-link" href="https://github.com/hayashi-antas/v-model" target="_blank" rel="noopener noreferrer" aria-label="V字モデルの構造と詳細のGitHub">
+										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="item-row">
+									<a class="item-link" href="https://github.com/hayashi-antas/tool-selection-labo/blob/main/comparisons/no-code-platforms.md" target="_blank" rel="noopener noreferrer">AI・ローコードツール比較表</a>
+									<a class="github-link" href="https://github.com/hayashi-antas/tool-selection-labo/blob/main/comparisons/no-code-platforms.md" target="_blank" rel="noopener noreferrer" aria-label="ローコード比較表のGitHub">
 										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
 									</a>
 								</div>
@@ -391,14 +366,37 @@ import CathedralLayout from '../layouts/CathedralLayout.astro';
 			margin-right: 0.05em;
 			width: 1rem;
 			height: 1rem;
-			font-size: 0.9rem;
-			line-height: 1;
 			transform: translateY(0.2em);
 		}
 
-		.hf-link.disabled {
-			filter: grayscale(100%);
-			opacity: 0.55;
+			.hf-link.disabled {
+				filter: grayscale(100%);
+				opacity: 0.55;
+			}
+
+			.streamlit-link {
+				order: -1;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 0.08em;
+				width: 1rem;
+				height: 1rem;
+				flex-shrink: 0;
+				transform: translateY(0.2em);
+				transition: transform 0.2s ease;
+			}
+
+			.streamlit-link:hover {
+				transform: translateY(0.16em) scale(1.04);
+			}
+
+		.service-icon {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border-radius: 3px;
+			object-fit: contain;
 		}
 
 	@media (max-width: 900px) {
