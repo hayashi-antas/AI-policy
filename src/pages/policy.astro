@@ -9,6 +9,9 @@ import RevealSection from '../components/RevealSection';
 
 <CathedralLayout title="Internal AI Policy - The Codex">
 	<article class="codex">
+		<div class="scroll-cue" aria-hidden="true">
+			<span class="scroll-cue-line"></span>
+		</div>
 
 		<RevealSection client:visible>
 			<header class="section-intro">
@@ -155,6 +158,21 @@ import RevealSection from '../components/RevealSection';
 	</article>
 </CathedralLayout>
 
+<script>
+	const codex = document.querySelector('.codex');
+	if (codex) {
+		const toggleScrolledState = () => {
+			if (window.scrollY > 64) {
+				codex.classList.add('has-scrolled');
+			} else {
+				codex.classList.remove('has-scrolled');
+			}
+		};
+		toggleScrolledState();
+		window.addEventListener('scroll', toggleScrolledState, { passive: true });
+	}
+</script>
+
 <style>
 	.codex {
 		width: 100%;
@@ -165,6 +183,59 @@ import RevealSection from '../components/RevealSection';
 		z-index: 1;
 	}
 
+	.scroll-cue {
+		position: fixed;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		width: 18px;
+		height: 52px;
+		z-index: 7;
+		pointer-events: none;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		transition: opacity 0.35s ease, transform 0.35s ease;
+	}
+
+	.scroll-cue-line {
+		display: block;
+		width: 2px;
+		height: 44px;
+		border-radius: 999px;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.1) 0%,
+			rgba(112, 200, 239, 0.92) 40%,
+			rgba(255, 255, 255, 0.12) 100%
+		);
+		background-size: 100% 240%;
+		animation: introCueFlow 2s linear infinite;
+	}
+
+	.codex.has-scrolled .scroll-cue {
+		opacity: 0;
+		transform: translate(-50%, 10px);
+	}
+
+	.codex > :not(.scroll-cue) {
+		opacity: 0;
+		transform: translateY(24px);
+		filter: blur(2px);
+		pointer-events: none;
+		transition:
+			opacity 0.45s ease,
+			transform 0.55s ease,
+			filter 0.55s ease;
+	}
+
+	.codex.has-scrolled > :not(.scroll-cue) {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
+		pointer-events: auto;
+	}
+
 	@media (max-width: 768px) {
 		.codex {
 			padding: 4rem 1.5rem;
@@ -173,8 +244,13 @@ import RevealSection from '../components/RevealSection';
 
 	.section-intro {
 		text-align: center;
-		margin-bottom: 6rem;
-		padding-top: 4rem;
+		margin-bottom: 3.6rem;
+		padding: 3rem 2rem;
+		background: rgba(255, 255, 255, 0.74);
+		border: 1px solid rgba(255, 255, 255, 0.84);
+		box-shadow: 0 16px 42px rgba(8, 22, 40, 0.12);
+		backdrop-filter: blur(10px);
+		border-radius: 20px;
 	}
 
 	.seal {
@@ -209,11 +285,45 @@ import RevealSection from '../components/RevealSection';
 		border: 0;
 		height: 1px;
 		background: linear-gradient(90deg, transparent, var(--faint-line), transparent);
-		margin: 4rem 0;
+		margin: 2.6rem 0;
 	}
 
 	section {
-		margin-bottom: 6rem;
+		margin-bottom: 2.4rem;
+		padding: 2.2rem 2rem;
+		background: rgba(255, 255, 255, 0.76);
+		border: 1px solid rgba(255, 255, 255, 0.84);
+		box-shadow: 0 10px 30px rgba(8, 22, 40, 0.1);
+		backdrop-filter: blur(8px);
+		border-radius: 18px;
+		position: relative;
+	}
+
+	section:not(#section-1)::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: -1.7rem;
+		width: 2px;
+		height: 1.3rem;
+		transform: translateX(-50%);
+		border-radius: 999px;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.15) 0%,
+			rgba(86, 178, 220, 0.85) 42%,
+			rgba(255, 255, 255, 0.15) 100%
+		);
+		background-size: 100% 220%;
+		animation: connectorFlow 2.3s linear infinite;
+		opacity: 0;
+		transform: translateX(-50%) scaleY(0.5);
+		transition: opacity 0.35s ease, transform 0.35s ease;
+	}
+
+	.codex.has-scrolled section:not(#section-1)::before {
+		opacity: 0.68;
+		transform: translateX(-50%) scaleY(1);
 	}
 
 	h2 {
@@ -269,7 +379,7 @@ import RevealSection from '../components/RevealSection';
 	}
 
 	table, tbody, tr, td, th {
-		background-color: #ffffff !important;
+		background-color: rgba(255, 255, 255, 0.72) !important;
 		color: #1a1a1a !important;
 	}
 
@@ -278,7 +388,11 @@ import RevealSection from '../components/RevealSection';
 		border-collapse: collapse;
 		margin-top: 2rem;
 		font-size: 1rem;
-        border: 1px solid #e5e5e5;
+		border: 1px solid rgba(255, 255, 255, 0.84);
+		border-radius: 16px;
+		overflow: hidden;
+		backdrop-filter: blur(8px);
+		box-shadow: 0 8px 24px rgba(8, 22, 40, 0.08);
 	}
 
 	th, td {
@@ -289,22 +403,72 @@ import RevealSection from '../components/RevealSection';
 	}
 
 	th {
-		background-color: #f8f9fa;
+		background-color: rgba(255, 255, 255, 0.84);
 		font-family: var(--font-sans);
 		color: #000000;
 		font-weight: 700;
-        min-width: 180px;
+		min-width: 180px;
 	}
 
 	.doc-footer {
 		text-align: center;
 		color: var(--stone-text);
 		font-size: 0.9rem;
-		padding-bottom: 4rem;
+		padding: 2rem 1.8rem 3rem;
+		background: rgba(255, 255, 255, 0.74);
+		border: 1px solid rgba(255, 255, 255, 0.84);
+		box-shadow: 0 14px 34px rgba(8, 22, 40, 0.1);
+		backdrop-filter: blur(8px);
+		border-radius: 18px;
 	}
 	
 	.references ul {
 		list-style: none;
 		padding: 0;
+	}
+
+	@media (max-width: 768px) {
+		.section-intro {
+			padding: 2.2rem 1.4rem;
+		}
+		section {
+			padding: 1.7rem 1.25rem;
+			margin-bottom: 2rem;
+		}
+		section:not(#section-1)::before {
+			top: -1.45rem;
+			height: 1.05rem;
+		}
+		.doc-footer {
+			padding: 1.6rem 1.2rem 2.2rem;
+		}
+	}
+
+	@keyframes connectorFlow {
+		0% {
+			background-position: 0% 100%;
+			opacity: 0.35;
+		}
+		40% {
+			opacity: 0.75;
+		}
+		100% {
+			background-position: 0% -100%;
+			opacity: 0.35;
+		}
+	}
+
+	@keyframes introCueFlow {
+		0% {
+			background-position: 0% 120%;
+			opacity: 0.45;
+		}
+		35% {
+			opacity: 0.95;
+		}
+		100% {
+			background-position: 0% -120%;
+			opacity: 0.45;
+		}
 	}
 </style>

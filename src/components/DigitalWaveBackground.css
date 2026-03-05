@@ -1,0 +1,25 @@
+.digital-wave-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.digital-wave-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.digital-wave-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(56% 42% at 78% 6%, rgba(255, 210, 106, 0.22) 0%, rgba(255, 166, 90, 0.16) 28%, rgba(255, 110, 90, 0.06) 56%, rgba(255, 255, 255, 0) 78%),
+    radial-gradient(125% 72% at 22% 6%, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.06) 58%, rgba(255, 255, 255, 0) 82%),
+    linear-gradient(180deg, rgba(250, 253, 255, 0.34) 0%, rgba(246, 251, 255, 0.2) 52%, rgba(239, 246, 255, 0.08) 100%);
+}
