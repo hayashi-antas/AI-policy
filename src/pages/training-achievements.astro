@@ -38,12 +38,15 @@ const assetBase = basePath.endsWith('/') ? basePath : `${basePath}/`;
 								</li>
 								<li>
 									<div class="item-row">
-										<a class="item-link" href="https://peeaaa-ant-plan2table.hf.space/me-check" target="_blank" rel="noopener noreferrer">機械図と電気図の突合アプリ（Cloud Vision API）</a>
+										<a class="item-link" href="https://plan2table-production.up.railway.app/me-check" target="_blank" rel="noopener noreferrer">機械図と電気図の突合アプリ（Cloud Vision API）</a>
 										<a class="github-link" href="https://github.com/hayashi-antas/plan2table" target="_blank" rel="noopener noreferrer" aria-label="機器表突合アプリのGitHub">
 											<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.78.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.38-2.53-.5-2.69-.95-.09-.24-.48-.95-.82-1.14-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.84.72 1.24 1.87.89 2.33.68.07-.53.28-.89.5-1.09-1.78-.21-3.64-.92-3.64-4.08 0-.9.31-1.64.82-2.22-.08-.21-.36-1.05.08-2.19 0 0 .67-.22 2.2.85A7.38 7.38 0 0 1 8 3.7c.68 0 1.37.09 2.01.27 1.53-1.07 2.2-.85 2.2-.85.44 1.14.16 1.98.08 2.19.51.58.82 1.32.82 2.22 0 3.17-1.87 3.87-3.65 4.08.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.14.47.55.39A8.22 8.22 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z"/></svg>
 										</a>
 										<a class="hf-link" href="https://huggingface.co/spaces/Peeaaa-ant/plan2table/tree/main" target="_blank" rel="noopener noreferrer" aria-label="機器表突合アプリのHugging Faceリンク" title="Hugging Faceリンク">
 											<img class="service-icon" src={`${assetBase}brand-icons/huggingface.png`} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+										</a>
+										<a class="railway-link" href="https://plan2table-production.up.railway.app/me-check" target="_blank" rel="noopener noreferrer" aria-label="機器表突合アプリのRailway" title="Railwayリンク">
+											<img class="service-icon" src={`${assetBase}brand-icons/railway-dark.svg`} alt="" loading="lazy" decoding="async" aria-hidden="true" />
 										</a>
 									</div>
 								</li>
@@ -358,7 +361,8 @@ const assetBase = basePath.endsWith('/') ? basePath : `${basePath}/`;
 			pointer-events: none;
 		}
 
-		.hf-link {
+		.hf-link,
+		.railway-link {
 			order: -1;
 			display: inline-flex;
 			align-items: center;
